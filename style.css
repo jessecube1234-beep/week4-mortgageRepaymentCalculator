@@ -216,4 +216,11 @@ label {
   .container {
     flex-direction: column;
   }
+  .term-rate {
+    flex-direction: column;
+  }
+
+  .term-rate .input-group {
+    width: 100%;
+  }
 }
