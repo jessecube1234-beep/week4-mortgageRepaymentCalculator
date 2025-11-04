@@ -1,0 +1,219 @@
+:root {
+  --yellow: hsl(61, 70%, 52%);
+  --dark-blue: hsl(202, 55%, 16%);
+  --light-gray: hsl(203, 41%, 72%);
+  --error: hsl(4, 69%, 50%);
+  --white: #fff;
+  --font: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Basic page styles */
+body {
+  font-family: var(--font);
+  background: hsl(202, 86%, 94%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Main card */
+.container {
+  background: var(--white);
+  display: flex;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+/* Left section */
+.calculator {
+  flex: 1;
+  padding: 2.5rem;
+  box-sizing: border-box;
+}
+
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clear {
+  border: none;
+  background: none;
+  color: var(--light-gray);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+/* Input boxes */
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--light-gray);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input {
+  border: none;
+  padding: 0.8rem;
+  flex: 1;
+  font-size: 1rem;
+  outline: none;
+}
+
+.prefix, .suffix {
+  background: hsl(203, 41%, 90%);
+  padding: 0.8rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+/* Hover & focus */
+.input-group:hover,
+.input-group:focus-within {
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 2px hsla(61, 70%, 52%, 0.3);
+}
+
+/* Error styling */
+.input-error {
+  border-color: var(--error) !important;
+}
+
+.error-message {
+  color: var(--error);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  height: 1rem;
+}
+
+/* Mortgage term and rate */
+.term-rate {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Buttons for type */
+.mortgage-type label {
+  display: block;
+  border: 1px solid var(--light-gray);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.mortgage-type input {
+  margin-right: 0.5rem;
+}
+
+.mortgage-type label:hover {
+  border-color: var(--yellow);
+}
+
+.mortgage-type input:checked + span,
+.mortgage-type input:checked {
+  background: hsla(61, 70%, 52%, 0.2);
+  border-color: var(--yellow);
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  background: var(--yellow);
+  color: var(--dark-blue);
+  border: none;
+  font-weight: 700;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background: hsl(61, 70%, 60%);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Right section */
+.results {
+  flex: 1;
+  background: var(--dark-blue);
+  color: var(--white);
+  padding: 2.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+}
+
+.results img {
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+
+/* The results box itself */
+.result-box {
+  background: hsl(202, 55%, 12%);
+  border-top: 4px solid var(--yellow);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+.result-box h3 {
+  color: var(--light-gray);
+  font-weight: 400;
+}
+
+.monthly {
+  font-size: 2rem;
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.total {
+  border-top: 1px solid var(--light-gray);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+/* Hide / show elements */
+.hidden {
+  display: none;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
